@@ -10,9 +10,7 @@ import java.awt.Rectangle;
 
 import com.Honor.Game;
 import com.Honor.input.MouseInput;
-import com.Honor.libs.Audio;
 import com.Honor.libs.Images;
-import com.Honor.utils.AudioPlayer;
 
 /**
  * @author Valentine
@@ -21,10 +19,13 @@ import com.Honor.utils.AudioPlayer;
 public class Quit 
 {
 	public Rectangle back;
+	public Rectangle quit;
+	
 	public Quit() 
 	{
 		int fillerY = Game.HEIGHT - 100;
-		back    = new Rectangle((Game.WIDTH - 500) / 2, fillerY, 500, 50);
+		back    = new Rectangle((Game.WIDTH - 1000) / 2, fillerY, 500, 50);
+		quit    = new Rectangle((Game.WIDTH + 900) / 2, fillerY, 500, 50);
 	}
 	
 	public void drawButton(Graphics g, Rectangle rect, String text, int offsetX)
@@ -37,7 +38,6 @@ public class Quit
 		{
 			g.setColor(Color.WHITE);
 			g.setFont(Angelina68);
-			AudioPlayer.getSound(Audio.BUTTON).play();
 		}
 		else
 		{
@@ -51,5 +51,10 @@ public class Quit
 	{
 		g.drawImage(Images.secondBackground, 0, 0, null);
 		drawButton(g, back, "BACK TO MAIN MENU", 0);
+		drawButton(g, quit, "QUIT", 0);
+		Font Angelina = new Font("Angelina", Font.BOLD, 50);
+		g.setFont(Angelina);
+		g.setColor(new Color(112, 0, 0));
+		g.drawString("Are you sure you wish to exit?", 500, 450);
 	}
 }

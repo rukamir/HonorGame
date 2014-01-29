@@ -1,26 +1,24 @@
-/**
- * 
- */
-package com.Honor.input;
 
-//import java.awt.Color;
+package com.Honor.input;
 import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import com.Honor.Game;
 import com.Honor.enums.GameState;
-//import com.Honor.libs.Audio;
-//import com.Honor.utils.AudioPlayer;
+import com.Honor.libs.Audio;
+import com.Honor.utils.AudioPlayer;
+
 /**
  * @author Valentine
  *
  */
+
+
 public class MouseInput extends MouseAdapter
 {
 	public static int MOUSE_X, MOUSE_Y;
 	public static Rectangle MOUSE = new Rectangle(1, 1, 1, 1);
-	
+		
 	public void mouseClicked(MouseEvent e)
 	{
 		int mouse = e.getButton();
@@ -31,7 +29,12 @@ public class MouseInput extends MouseAdapter
 			switch(Game.state)
 			{
 			case MENU:
-				if(rect.intersects(Game.getInstance().menu.options))
+				if(rect.intersects(Game.getInstance().menu.play))
+				{
+					AudioPlayer.getSound(Audio.BACKGROUND).stop();			// muta asta in o noua clasa rungame.java
+					Game.state = GameState.GAME; 							// this is where the game actually run
+				}
+				else if(rect.intersects(Game.getInstance().menu.options))
 				{
 					Game.state = GameState.OPTIONS;
 				}
@@ -45,7 +48,7 @@ public class MouseInput extends MouseAdapter
 				}
 				else if(rect.intersects(Game.getInstance().menu.quit))
 				{
-					System.exit(1);
+					Game.exit();
 				}
 				break;
 			case GAME:
@@ -71,7 +74,12 @@ public class MouseInput extends MouseAdapter
 			case QUIT:
 				if(rect.intersects(Game.getInstance().quit.back))
 				{
+					AudioPlayer.getSound(Audio.BACKGROUND).play();
 					Game.state = GameState.MENU;
+				}
+				else if(rect.intersects(Game.getInstance().quit.quit))
+				{
+					Game.exit(); 
 				}
 				break;
 			default:

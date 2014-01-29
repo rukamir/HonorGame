@@ -8,12 +8,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 import com.Honor.Game;
-//import com.Honor.Screens.Menu;
+
 
 
 public class Renderer 
 {
-	//private static Game game = Game.getInstance();
 	public void renderBackground(Graphics g)
 	{
 		switch(Game.state)
@@ -43,6 +42,23 @@ public class Renderer
 	}
 	public void renderForeground(Graphics g)
 	{
-		
+		switch(Game.state)
+		{
+		case MENU:
+			break;
+		case GAME:
+			Game.getInstance().getController().render(g); // render all the objects added to the controller
+			break;
+		case OPTIONS:
+			break;
+		case CREDITS:
+			break;
+		case INFO:
+			break;
+		case QUIT:
+			break;
+		default:
+			break;
+		}
 	}
 }

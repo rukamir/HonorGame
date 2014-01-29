@@ -35,13 +35,13 @@ public class Menu
 	public void drawButton(Graphics g, Rectangle rect, String text, int offsetX)
 	{
 		Font Angelina = new Font("Angelina", Font.BOLD, 56);
-		Font Angelina68 = new Font("Angelina", Font.BOLD, 74);
+		Font Angelina74 = new Font("Angelina", Font.BOLD, 74);
 		g.setFont(Angelina);
 		
 		if(MouseInput.MOUSE.intersects(rect) && MouseInput.MOUSE != null)
 		{
 			g.setColor(Color.WHITE);
-			g.setFont(Angelina68);
+			g.setFont(Angelina74);
 			AudioPlayer.getSound(Audio.BUTTON).play();
 		}
 		else
@@ -49,7 +49,6 @@ public class Menu
 			g.setColor(new Color(112, 0, 0));
 		}
 		
-		//g.drawRect(rect.x, rect.y, rect.width, rect.height);
 		g.drawString(text, rect.x + offsetX, rect.y + 40);
 	}
 	

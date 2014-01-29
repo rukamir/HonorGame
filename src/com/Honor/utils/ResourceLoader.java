@@ -12,7 +12,7 @@ import com.Honor.libs.Images;
 
 /**
  * @author Valentine
- *
+ * updated by Nick
  */
 public class ResourceLoader {
 
@@ -40,6 +40,24 @@ public class ResourceLoader {
 	{
 		AudioPlayer.addSound(Audio.BUTTON, "button.wav");
 		AudioPlayer.addSound(Audio.BACKGROUND,  "background.wav");
+		AudioPlayer.addSound(Audio.COIN, "coin.wav");
+		AudioPlayer.addSound(Audio.FIREBALL,  "fireball.wav");
+		AudioPlayer.addSound(Audio.JUMP, "jump.wav");
+		AudioPlayer.addSound(Audio.KICK,  "kick.wav");
+		AudioPlayer.addSound(Audio.NEWLIFE, "newlife.wav");
+		AudioPlayer.addSound(Audio.POWERDOWN,  "powerdown.wav");
+		AudioPlayer.addSound(Audio.POWERUP, "powerup.wav");
+		AudioPlayer.addSound(Audio.CHECKPOINT,  "SFX_Checkpoint.wav");
+		AudioPlayer.addSound(Audio.THUD, "SFX_THUD.wav");
+		AudioPlayer.addSound(Audio.WIND,  "AMB_HeavyWind.wav");
+		AudioPlayer.addSound(Audio.SWIMUP, "SFX_SwimUp.wav");
+		AudioPlayer.addSound(Audio.SWIMDOWN,  "SFX_SwimDown.wav");
+		AudioPlayer.addSound(Audio.ENEMY_DIE, "SFX_EnemyDie.wav");
+		AudioPlayer.addSound(Audio.LEVER,  "SFX_Lever.wav");
+		AudioPlayer.addSound(Audio.MARIO_DIE, "SFX_MarioDie.wav");
+		AudioPlayer.addSound(Audio.END_LEVEL,  "SFX_EndLevel.wav");
+
+		
 	}
 
 }

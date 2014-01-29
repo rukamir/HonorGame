@@ -15,8 +15,8 @@ import com.Honor.libs.Reference;
  * @author Valentine
  *
  */
-public class BufferedImageLoader {
-
+public class BufferedImageLoader 
+{
 	private BufferedImage image;
 	
 	public BufferedImage loadImage(String imagePath) throws IOException
