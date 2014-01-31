@@ -22,6 +22,7 @@ public class Textures
 	// game objects as a subimages from the spritesheet
 	public BufferedImage ground; // stone one 
 	public BufferedImage brick; // brown one 
+	public BufferedImage hazard1;
 	
 	// player 
 	public BufferedImage playerSR; // standing
@@ -42,6 +43,7 @@ public class Textures
 	{
 		ground = spriteSheet_1.getSprite(1, 4); // initialize the subimage from ground.png as a ground
 		brick = spriteSheet_1.getSprite(2, 2); // initialize the subimage from ground.png as a brick
+		hazard1 = spriteSheet_1.getSprite(4, 1);// place holder
 		
 		playerSR = spriteSheet_2.getSprite(5, 1); // standing 
 		playerSL = spriteSheet_2.getSprite(9, 3); // standing

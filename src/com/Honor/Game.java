@@ -91,10 +91,25 @@ public class Game extends Canvas implements Runnable
 		this.addMouseListener(mouse);
 		this.addMouseMotionListener(mouse);
 		
+		//*********************************
+		//          level notes
+		//*********************************
+		// -Square sprites are 50pxl big
+		// -HEIGHT is the top of the screen
+		//*********************************
+		
 		// this is the tiles population on the level
 		for(int i = 0; i < 1440; i++)
 		{
+			// using the Controller
+			// addObject using
+			// 		X val
+			//		height/y val
+			//		object type
+			//		pass tex
+			//		get the texture you want to use from tex
 			Controller.addObject(new Block(i, HEIGHT - 76, Identities.BLOCK_GROUND, tex, tex.ground)); //  draw the bottom ground
+			// move forward 49pxl so textures are not overlapping
 			i += 49;
 		}
 		for(int i = 100; i < 600; i++)
