@@ -25,6 +25,10 @@ public class ResourceLoader {
 			Images.mainBackground = imageLoader.loadImage("main.png");
 			Images.secondBackground = imageLoader.loadImage("second.png");
 			Images.star = imageLoader.loadImage("star.png");
+			
+			// the entire spritesheet 
+			Images.spriteSheet_1 = imageLoader.loadImage("ground.png");  // populate decorations
+			Images.spriteSheet_2 = imageLoader.loadImage("Wilster.png");   // player
 		}catch(IOException e)
 		{
 			e.printStackTrace();
