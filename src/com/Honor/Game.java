@@ -132,11 +132,57 @@ public class Game extends Canvas implements Runnable
 			Controller.addObject(new Block(i, HEIGHT - 200, Identities.BLOCK_BRICK, tex, tex.brick));
 			i += 49;
 		}
-		// end population 
+		// 1440 is the end of this part of the scene
+		
+		
+		//*************
+		// new section
+		//*************
+		for(int i = 1440; i < 2440; i++)
+		{
+			Controller.addObject(new Block(i, HEIGHT - 200, Identities.BLOCK_GROUND, tex, tex.ground));
+			i += 49;
+		}
+		
+		// spaced out blocks
+		int skip = 0;
+		for(int i = 2440; i < 3300; i++)
+		{
+			// make separated bricks
+			if(skip == 3) {
+				Controller.addObject(new Block(i, HEIGHT - 400, Identities.BLOCK_BRICK, tex, tex.brick));
+				skip = 0;
+			}
+			++skip;
+			i += 49;
+		}
+	
+		// upwards staircase
+		int vert = 650;
+		for(int i = 3400; i < 3600; i+=50)
+		{
+			Controller.addObject(new Block(i, HEIGHT - vert, Identities.BLOCK_BRICK, tex, tex.brick));
+			vert += 50;
+		}
+		
+		// lower downwards stairs
+		vert = 450;
+		for(int i = 3750; i < 3900; i+=50)
+		{
+			Controller.addObject(new Block(i, HEIGHT - vert, Identities.BLOCK_BRICK, tex, tex.brick));
+			vert -= 50;
+		}
+		
+		// floor continued
+		vert = 76;
+		for(int i = 4100; i < 4800; i+=50)
+		{	
+			Controller.addObject(new Block(i, HEIGHT - vert, Identities.BLOCK_GROUND, tex, tex.ground)); //  draw the bottom ground
+		}
 		
 		// this is the player
 		
-		Controller.addObject(new Player(400, HEIGHT - 500, Identities.PLAYER, tex)); //  draw the player
+		Controller.addObject(new Player(400, HEIGHT - 600, Identities.PLAYER, tex)); //  draw the player
 		
 		// this is the cmera view
 		camera = new Camera(0, 0);
